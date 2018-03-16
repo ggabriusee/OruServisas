@@ -32,7 +32,5 @@ public class Main {
         final HttpServer server = startServer();
         System.out.println(String.format("Temperatūrų programa pasileido "
                 + "\nPaspauskite Enter, kad užbaigtumėte darbą...", BASE_URI));
-        //System.in.read();
-        //server.stop();
     }
 }

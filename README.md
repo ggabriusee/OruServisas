@@ -4,4 +4,4 @@ Norint paleisti servisą reikia paleisiti komandas:
 
 `docker run -d --net=host webservisas:1`
 
-Servisas pasiekiamas: /temperatura/konverteris/
+Servisas pasiekiamas: http://localhost:5000/temperatura/konverteris/

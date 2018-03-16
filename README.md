@@ -1,7 +1,7 @@
 Norint paleisti servisą reikia paleisiti komandas:
 
-`docker build -t simple/rest:1 .`
+`docker build -t webservisas:1 .`
 
-`docker run -d -p 80:1234 simple/rest:1`
+`docker run -d --net=host webservisas:1`
 
-Rest servisas pasiekiamas: /users
+Servisas pasiekiamas: /temperatura/konverteris/

@@ -16,8 +16,8 @@ Ištrinti lokaciją pagal nurodytą ID su delete metodu: http://localhost:5000/l
 Atnaujinti lokaciją pagal nurodytą ID su put metodu: http://localhost:5000/locations/{location_ID}
 
 
-```JSON
 body nurodyti, duomenų struktūrą pvz:
+```JSON
 {
   "temperature": 19,
   "city": "Vilnius",
@@ -29,8 +29,10 @@ Pridėti lokacija su post metodu : http://localhost:5000/locations/
 
 
 body nurodyti, duomenų struktūrą pvz:
+``JSON
 {
   "temperature": -20,
   "city": "Praha",
   "date": "2018-12-31"
 }
+```

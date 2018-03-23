@@ -10,6 +10,7 @@ import spark.Response;
 public class Konverteris {
 
     	private static final int HTTP_NOT_FOUND = 404;
+	private static final int HTTP_CONFLICT = 409;
 	private static TemperaturuKonteineris tk = new TemperaturuKonteineris(convertFtoC(32));
 	Konverteris() {}
 
@@ -23,7 +24,7 @@ public class Konverteris {
 			tk.addTemp(jsonObject);
  		return "Ok";
 		} catch (Exception e) {
-			response.status(HTTP_NOT_FOUND);
+			response.status(HTTP_CONFLICT);
 		    	return "Saraše jau yra " + request.params(":f") + " reikšmė";
         	}	
 	}

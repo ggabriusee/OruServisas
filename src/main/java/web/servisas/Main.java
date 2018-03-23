@@ -3,7 +3,7 @@ package web.servisas;
 import static spark.Spark.*;
 
 import java.io.IOException;
-
+import static java.net.HttpURLConnection.HTTP_BAD_REQUEST;
 
 public class Main {
    
@@ -11,13 +11,17 @@ public class Main {
 	Konverteris k = new Konverteris();
         port(5000);
 
-        path("/konverteris", () -> {
+        path("/locations", () -> {
 
             get("", (request, response) -> {
                 return k.printTemp(request, response);
-            });
+            }, new JsonTransformer());
+		
+	    get("/city/:f", (request, response) -> {
+                return k.getTempSpecific(request, response);
+            }, new JsonTransformer());
 
-	    post("/:f", (request, response) -> {
+	    post("", (request, response) -> {
                 return k.postTemp(request, response);
             } , new JsonTransformer());
 		
@@ -31,7 +35,10 @@ public class Main {
 
         });
 	
-	exception(Exception.class, (e, request, response) -> e.printStackTrace());
+	exception(Exception.class, (e, request, response) -> {
+		response.status(HTTP_BAD_REQUEST);
+		e.printStackTrace();
+	});
 	
         after((request, response) -> response.type("application/json"));
 

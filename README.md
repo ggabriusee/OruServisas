@@ -9,17 +9,25 @@ Servisas pasiekiamas: http://localhost:5000/locations
 
 Gauti visas lokacijas pagal miestą su get metodu : http://localhost:5000/locations/city/{name_of_city}
 
+
 Ištrinti lokaciją pagal nurodytą ID su delete metodu: http://localhost:5000/locations/{location_ID}
 
+
 Atnaujinti lokaciją pagal nurodytą ID su put metodu: http://localhost:5000/locations/{location_ID}
+
+
+```JSON
 body nurodyti, duomenų struktūrą pvz:
 {
   "temperature": 19,
   "city": "Vilnius",
   "date": "2018-02-05"
 }
+```
 
 Pridėti lokacija su post metodu : http://localhost:5000/locations/ 
+
+
 body nurodyti, duomenų struktūrą pvz:
 {
   "temperature": -20,

@@ -29,7 +29,7 @@ Pridėti lokacija su post metodu : http://localhost:5000/locations/
 
 
 body nurodyti, duomenų struktūrą pvz:
-``JSON
+```JSON
 {
   "temperature": -20,
   "city": "Praha",

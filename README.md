@@ -4,4 +4,25 @@ Norint paleisti servisą reikia paleisiti komandas:
 
 `docker run -d -p 5000:5000 webservisas:1`
 
-Servisas pasiekiamas: http://localhost:5000/konverteris
+Servisas pasiekiamas: http://localhost:5000/locations
+Šiuo adresu pasiekiami visų lokacijų duomenys
+
+Gauti visas lokacijas pagal miestą su get metodu : http://localhost:5000/locations/city/{name_of_city}
+
+Ištrinti lokaciją pagal nurodytą ID su delete metodu: http://localhost:5000/locations/{location_ID}
+
+Atnaujinti lokaciją pagal nurodytą ID su put metodu: http://localhost:5000/locations/{location_ID}
+body nurodyti, duomenų struktūrą pvz:
+{
+  "temperature": 19,
+  "city": "Vilnius",
+  "date": "2018-02-05"
+}
+
+Pridėti lokacija su post metodu : http://localhost:5000/locations/ 
+body nurodyti, duomenų struktūrą pvz:
+{
+  "temperature": -20,
+  "city": "Praha",
+  "date": "2018-12-31"
+}

@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>web.servisas</groupId>
-    <artifactId>gab-servisas</artifactId>
+    <artifactId>oru-servisas</artifactId>
     <packaging>jar</packaging>
     <version>1.0</version>
-    <name>gab-web-servisas</name>
+    <name>oru-web-servisas</name>
 
 
     <dependencies>

@@ -2,9 +2,6 @@ package web.servisas;
 
 import lombok.Data;
 
-/**
- * Created by liutri on 2017-03-30.
- */
 @Data
 public class CityData {
     private int id;

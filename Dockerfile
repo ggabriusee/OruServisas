@@ -6,5 +6,5 @@ COPY src /code/src
 RUN ["mvn", "clean", "package"]
 
 EXPOSE 5000
-CMD ["java", "-jar", "target/gab-servisas-jar-with-dependencies.jar"]
+CMD ["java", "-jar", "target/oru-servisas-jar-with-dependencies.jar"]
 

@@ -7,41 +7,45 @@ import static java.net.HttpURLConnection.HTTP_BAD_REQUEST;
 
 public class Main {
    
-    public static void main(String[] args) throws IOException {
-	Konverteris k = new Konverteris();
-        port(5000);
+	public static void main(String[] args) throws IOException {
+		OruServisas service = new OruServisas();
+		port(5000);
 
-        path("/locations", () -> {
+		path("/locations", () -> {
 
-            get("", (request, response) -> {
-                return k.printTemp(request, response);
-            }, new JsonTransformer());
-		
-	    get("/city/:f", (request, response) -> {
-                return k.getTempSpecific(request, response);
-            }, new JsonTransformer());
+			get("", (request, response) -> {
+				return service.getAllData(request, response);
+			}, new JsonTransformer());
 
-	    post("", (request, response) -> {
-                return k.postTemp(request, response);
-            } , new JsonTransformer());
-		
-            put("/:f", (request, response) -> {
-                return k.putTemp(request, response);
-            }, new JsonTransformer());
+			get("/byCity/:city", (request, response) -> {
+				return service.getCities(request, response);
+			}, new JsonTransformer());
 
-            delete("/:f", (request, response) -> {
-                return k.deleteTemp(request, response);
-            }, new JsonTransformer());
+			get("/:id", (request, response) -> {
+				return service.getWithId(request, response);
+			}, new JsonTransformer());
 
-        });
+			post("", (request, response) -> {
+				return service.postData(request, response);
+			} , new JsonTransformer());
+
+			put("/:id", (request, response) -> {
+				return service.putData(request, response);
+			}, new JsonTransformer());
+
+			delete("/:id", (request, response) -> {
+				return service.deleteData(request, response);
+			}, new JsonTransformer());
+
+        	});
 	
-	exception(Exception.class, (e, request, response) -> {
-		response.status(HTTP_BAD_REQUEST);
-		e.printStackTrace();
-	});
+		exception(Exception.class, (e, request, response) -> {
+			response.status(HTTP_BAD_REQUEST);
+			e.printStackTrace();
+		});
 	
-        after((request, response) -> response.type("application/json"));
+		after((request, response) -> response.type("application/json"));
 
-    }
+	}
     
 }

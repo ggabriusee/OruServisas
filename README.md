@@ -7,11 +7,11 @@ Norint paleisti servisą reikia paleisiti komandas:
 Servisas pasiekiamas: http://localhost:5000/locations
 Šiuo adresu pasiekiami visų lokacijų duomenys
 
-Gauti visas lokacijas pagal miestą su get metodu : http://localhost:5000/locations/city/{name_of_city}
+Gauti visas lokacijas pagal miestą su get metodu : http://localhost:5000/locations/byCity/{name_of_city}
 
+Gauti visas konkrečią lokaciją pagal id su get metodu : http://localhost:5000/locations/{location_ID}
 
 Ištrinti lokaciją pagal nurodytą ID su delete metodu: http://localhost:5000/locations/{location_ID}
-
 
 Atnaujinti lokaciją pagal nurodytą ID su put metodu: http://localhost:5000/locations/{location_ID}
 
